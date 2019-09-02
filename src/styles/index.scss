@@ -1,0 +1,25 @@
+// base reset
+body {
+  margin: 0;
+}
+
+// load library for base style - For simplicity we load the entire library for now instead of modules
+@import "../../node_modules/material-components-web/dist/material-components-web.css";
+
+
+/**
+ OVERRIDES
+ We follow sass convention the SASS convention
+ https://github.com/material-components/material-components-web/tree/master/packages
+*/
+
+/** 1-Layout **/
+
+
+/** 2-Fonts **/
+
+
+/** 3- Components - MUI structure **/
+
+
+/** 4- Globals **/
