@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "npm run test -- --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node ./server/api/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,5 +54,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme-to-json": "^3.4.0",
+    "json-server": "^0.15.1"
   }
 }

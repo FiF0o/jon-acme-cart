@@ -1,0 +1,19 @@
+{
+  "basket": [
+    {
+      "productCode": "FR1",
+      "name": "FruitTea",
+      "price": 3.11
+    },
+    {
+      "productCode": "SR1",
+      "name": "Strawberries",
+      "price": 5.00
+    },
+    {
+      "productCode": "CF1",
+      "name": "Coffee",
+      "price": 11.23
+    }
+  ]
+}
