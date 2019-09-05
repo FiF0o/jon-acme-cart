@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product /> component should render correctly 1`] = `
+<div
+  className="mdc-card demo-basic-with-header"
+>
+  <div
+    className="demo-card__primary"
+  >
+    <h2
+      className="demo-card__title mdc-typography mdc-typography--headline6"
+    >
+      name
+    </h2>
+    <h3
+      className="demo-card__subtitle mdc-typography mdc-typography--subtitle2"
+    >
+      ABC
+    </h3>
+  </div>
+  <div
+    className="mdc-card__primary-action demo-card__primary-action"
+    tabIndex="0"
+  >
+    <div
+      className="mdc-card__media mdc-card__media--16-9 demo-card__media"
+      style={
+        Object {
+          "backgroundImage": "url(/some/link/to/img)",
+        }
+      }
+    />
+    <div
+      className="demo-card__secondary mdc-typography mdc-typography--body2"
+    >
+      £
+      1
+    </div>
+  </div>
+</div>
+`;

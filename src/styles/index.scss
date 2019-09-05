@@ -12,14 +12,55 @@ body {
  We follow sass convention the SASS convention
  https://github.com/material-components/material-components-web/tree/master/packages
 */
+@import '_vars.scss';
+
 
 /** 1-Layout **/
-
-
+.mdc-layout-grid {
+  background-color: #f2f2f2;
+}
 /** 2-Fonts **/
-
+.sub-heading-title {
+  color: $font-tertiary-color;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
 
 /** 3- Components - MUI structure **/
 
+// Cards
+.mdc-card {
+  margin-bottom: 2rem;
+}
+
+.demo-card__primary {
+  text-transform: lowercase;
+}
+
+.demo-card__secondary {
+  text-align:  right;
+  font-weight: 800;
+}
+
+.demo-card__primary,
+.demo-card__secondary {
+  padding: 1rem;
+}
+
+.demo-card__subtitle {
+  color: $font-secondary-color;
+  text-transform: uppercase;
+}
+
 
 /** 4- Globals **/
+
+
+/** 5- Utils **/
+.expand-full {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

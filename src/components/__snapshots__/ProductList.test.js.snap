@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList component should render the list of products correctly 1`] = `
+<div>
+  <Product
+    key="ABCD"
+    name="ABC"
+    price={4}
+    productCode="ABCD"
+    productImg="some/dummy/imgLink"
+  />
+  <Product
+    key="ABC"
+    name="ABC"
+    price={4}
+    productCode="ABC"
+    productImg="some/dummy/imgLink"
+  />
+</div>
+`;
