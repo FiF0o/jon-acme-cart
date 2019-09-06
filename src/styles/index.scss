@@ -64,3 +64,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.mdc-linear-progress__buffering-dots {
+  background-color: $primary-color;
+}
+
+.has-error {
+  color: $error
+}

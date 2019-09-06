@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BasketContainer from './containers/BasketContainer'
+import { App } from './App'
 
 import { Provider } from 'react-redux'
 import { store } from './store'
@@ -9,13 +9,11 @@ import './styles/index.scss';
 
 import * as serviceWorker from './serviceWorker';
 
-// require('dotenv').config();
-
 console.log('running application in:', process.env.NODE_ENV)
 
 ReactDOM.render(
   <Provider store={store}>
-    <BasketContainer />
+    <App />
   </Provider>,
   document.getElementById('root')
   );

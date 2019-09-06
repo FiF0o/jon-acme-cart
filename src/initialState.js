@@ -1,5 +1,7 @@
 export const initialState = {
-  newItem: {},
   basket: [],
-  totalPrice: 0
+  totalPrice: 0,
+  isLoading: false,
+  isPromo: false,
+  hasError: false
 }

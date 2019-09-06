@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 
 import { logger } from './middlewares'
 
@@ -8,5 +9,8 @@ import { initialState } from './initialState';
 export const store = createStore(
   reducers,
   initialState,
-  applyMiddleware(logger)
+  compose(
+    applyMiddleware(logger, thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
+  )
 )

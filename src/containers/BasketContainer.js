@@ -1,13 +1,21 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-// actions import
-import App from '../App'
+import { getData } from '../actions/basket'
+import { BasketComponent } from '../components/BasketComponent'
 
 
-const mapStateToProps = ({newItem, basket, totalPrice}) => ({
-  newItem,
+const mapStateToProps = ({ basket, totalPrice, isLoading, isPromo, hasError }) => ({
   basket,
-  totalPrice
+  totalPrice,
+  isLoading,
+  isPromo,
+  hasError
 });
 
-export default connect(mapStateToProps, undefined)(App);
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators({
+      getData,
+    }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketComponent);
