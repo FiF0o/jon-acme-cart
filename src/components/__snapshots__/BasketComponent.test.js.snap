@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BasketComponent /> component without items should render correctly 1`] = `
+<div
+  className="mdc-layout-grid mdc-layout-grid"
+>
+  <div
+    className="mdc-layout-grid__cell--span-12"
+  >
+    <h1>
+      Your basket contains 0 item(s)
+    </h1>
+  </div>
+  <div
+    className="mdc-layout-grid__inner"
+  >
+    <div
+      className="mdc-layout-grid__cell--span-6"
+    >
+      <div
+        className="expand-full"
+      >
+        <h2
+          className="sub-heading-title"
+        >
+          Buy mooar it is empty 
+          <span
+            aria-label="ouch emoji"
+            role="img"
+          >
+            🤯
+          </span>
+        </h2>
+         
+        <button
+          className="mdc-button mdc-button--outlined"
+          onClick={[MockFunction]}
+        >
+          Load cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

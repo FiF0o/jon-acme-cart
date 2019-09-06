@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { ProductList } from './ProductList'
 
-export const BasketComponent = ({ basket, getData, isLoading, hasError }) =>
+
+const BasketComponent = ({ basket, getData, isLoading, hasError }) =>
   <div className="mdc-layout-grid mdc-layout-grid">
     <div className="mdc-layout-grid__cell--span-12">
       <h1>{`Your basket contains ${basket.length} item(s)`}</h1>
@@ -54,3 +56,14 @@ export const BasketComponent = ({ basket, getData, isLoading, hasError }) =>
       }
     </div>
   </div>
+
+BasketComponent.propTypes = {
+  basket: PropTypes.array.isRequired,
+  getData: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  hasError: PropTypes.bool.isRequired
+}
+
+export {
+  BasketComponent
+}
