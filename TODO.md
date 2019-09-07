@@ -1,5 +1,4 @@
 ## Things to
-- Optimise dotenv config (development, config)
-- BDDs
-- CI/CD
-- Precommit hook with with linting and pre-push with unit tests
+- Optimise dotenv config (development, product config)
+- Add BDDs
+- Add CI/CD for automated build and deployment 'somewhere'

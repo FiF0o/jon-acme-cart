@@ -1,6 +1,8 @@
 # ACME Supermarket
 
 Create a solution for the ACME Supermarket problem.
+Instructions to run the web project can be found [here](INSTRUCTIONS.md).
+A list of things to be added can be found is also available [in this section](TODO.md).
 
 ## Description of the problem
 

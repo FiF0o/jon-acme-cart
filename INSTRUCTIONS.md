@@ -1,5 +1,24 @@
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and modified to add Sass, enzyme helper library and is using React, Redux and CSS material UI library for its interface.
+
+
+## Requirements
+
+Must have nvm to use one of the latest version of node (e.g. node 12.8.1).
+Require node-sass.
+
+
+## Prerequisites before running the project
+Run the following command before running the available scripts below:
+- `nvm use` to use the correct version of node
+- `npm i` to install the dependencies
+
+You will also need to set the environment variables in the `env.development` file and rename this file `.env.development` and source it in the terminal where you want to run the project - `source .env.development` -
+
+By default, all the endpoints will be on your localhost but you still need to se the `PORT` env variable.
+By default, the ports for the:
+- Mock web API will be 4000
+- Web App 3000
 
 
 ## Available Scripts
@@ -44,27 +63,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
