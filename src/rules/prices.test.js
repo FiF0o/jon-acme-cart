@@ -1,4 +1,4 @@
-import { isPromoStrawberries, applyDiscount } from './prices';
+import { isPromoStrawberries, applyDiscount, sumAmount } from './prices';
 
 describe('rules for prices', () => {
   let baseBasket;
@@ -56,6 +56,25 @@ describe('rules for prices', () => {
       expect(reducedBasket).toEqual(expectedItems)
       expect(reducedBasket[0].price).toEqual(baseBasket[0].price - expectedDiscount)
       expect(reducedBasket[1].price).toEqual(baseBasket[1].price - expectedDiscount)
+    })
+  })
+
+  describe('sumAmount', () => {
+    it('should sum all the item prices together', () => {
+      const listOfItems = [
+        {
+          productCode: 'SR1',
+          name: 'Strawberries',
+          price: 4
+        },
+        {
+          productCode: 'SR1',
+          name: 'Strawberries',
+          price: 4
+        }
+      ]
+
+      expect(sumAmount(listOfItems)).toEqual(8)
     })
   })
   

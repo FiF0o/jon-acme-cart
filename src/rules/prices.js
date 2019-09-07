@@ -13,3 +13,8 @@ export const applyDiscount = (code, discountPrice) => (list) =>
          }
       ]
    }, [])
+
+export const sumAmount = list =>
+   list.reduce(
+      (acc, item) => acc + item.price, 0
+   )
