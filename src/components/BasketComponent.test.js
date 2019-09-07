@@ -13,6 +13,7 @@ describe('<BasketComponent /> component', () => {
       props = {
         basket: [],
         getData: jest.fn(),
+        clearBasket: jest.fn(),
         isLoading: false,
         hasError: false,
       }
@@ -53,15 +54,28 @@ describe('<BasketComponent /> component', () => {
   })
 
   describe('with items', () => {
-    it('should render a list of items when baskt contains items', () => {
-      const props = {
+    let props, wrapper
+    beforeEach(() => {
+      props = {
         basket: [{}, {}],
-        getData: () => {},
+        getData: jest.fn(),
+        clearBasket: jest.fn(),
         isLoading: false,
         hasError: false
       }
-      const wrapper = shallow(<BasketComponent {...props} />)
+
+      wrapper = shallow(<BasketComponent {...props} />)
+    })
+
+    it('should render a list of items when baskt contains items', () => {
       expect(wrapper.find('ProductList').length).toBe(1)
+    })
+
+    it('should call clearBasket() when the button is clicked', () => {
+      const mock = props.clearBasket
+      expect(mock).not.toHaveBeenCalled()
+      wrapper.find('button.mdc-button.mdc-button--outlined').simulate('click')
+      expect(mock).toHaveBeenCalled()
     })
   })
 

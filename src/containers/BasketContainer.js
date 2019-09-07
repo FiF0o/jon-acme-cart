@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { getData } from '../actions/basket'
+import { getData, clearBasket } from '../actions/basket'
 import { BasketComponent } from '../components/BasketComponent'
 
 
@@ -16,6 +16,7 @@ const mapStateToProps = ({ basket, totalPrice, isLoading, isPromo, hasError }) =
 const mapDispatchToProps = (dispatch) =>
     bindActionCreators({
       getData,
+      clearBasket: () => dispatch(clearBasket())
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(BasketComponent);

@@ -1,6 +1,6 @@
 import basket from './basket'
 import { initialState } from '../initialState'
-import { FETCHED_DATA } from "../actions/actionTypes";
+import { FETCHED_DATA, CLEAR } from "../actions/actionTypes";
 
 
 describe('BasketReducer', () => {
@@ -15,5 +15,13 @@ describe('BasketReducer', () => {
     }
     const expectedState = expectedAction.data
     expect(basket([], expectedAction)).toEqual(expectedState)
+  })
+
+  it(`should handle ${CLEAR} case`, () => {
+    const expectedState = []
+    const expectedAction = {
+      type: CLEAR,
+    }
+    expect(basket([{}], expectedAction)).toEqual(expectedState)
   })
 })

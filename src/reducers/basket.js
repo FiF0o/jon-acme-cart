@@ -1,4 +1,4 @@
-import { FETCHED_DATA } from "../actions/actionTypes";
+import { FETCHED_DATA, CLEAR } from "../actions/actionTypes";
 import { initialState } from '../initialState'
 
 const basket = (state = initialState.basket, action) => {
@@ -9,6 +9,8 @@ const basket = (state = initialState.basket, action) => {
       return [
         ...data
       ]
+    case CLEAR:
+        return []
     default:
       return state
   }

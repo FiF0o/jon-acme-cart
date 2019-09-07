@@ -1,4 +1,4 @@
-import { FETCHING_DATA, FETCHED_DATA, ERROR } from './actionTypes'
+import { FETCHING_DATA, FETCHED_DATA, ERROR, CLEAR } from './actionTypes'
 import getAllItems from '../api/getAllItems';
 
 
@@ -13,9 +13,13 @@ export const fetchedData = data => ({
 
 export const getData = () => (dispatch) => {
   dispatch(fetchingData())
-  return getAllItems()
+  return getAllItems('Normal')
     .then(data =>
       dispatch(fetchedData(data))
     )
     .catch(_ => dispatch({type: ERROR}))
 }
+
+export const clearBasket = () => ({
+  type: CLEAR
+})

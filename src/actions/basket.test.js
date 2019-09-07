@@ -1,8 +1,8 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk'
 
-import { fetchedData, fetchingData, getData } from './basket'
-import { FETCHING_DATA, FETCHED_DATA } from './actionTypes'
+import { fetchedData, fetchingData, getData, clearBasket } from './basket'
+import { FETCHING_DATA, FETCHED_DATA, CLEAR } from './actionTypes'
 
 import axios, { expectedData } from '../api/__mocks__/axios'
 
@@ -27,6 +27,13 @@ describe('basket actions', () => {
       data
     }
     expect(fetchedData(data)).toEqual(expectedPayload)
+  })
+
+  it('should create an action returning the correct object when clearBasket() is called', () => {
+    const expectedAction = {
+      type: CLEAR
+    }
+    expect(clearBasket()).toEqual(expectedAction)
   })
 
   it('dispatches the correct actions on successful getData()', () => {
