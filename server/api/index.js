@@ -27,5 +27,6 @@ server.listen(REACT_APP_API_PORT, () => {
     http://localhost:${REACT_APP_API_PORT}
   `)
   console.log(`Routes:
-  /api/basket`)
+  /api/basketNormal
+  `)
 })

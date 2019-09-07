@@ -4,9 +4,9 @@ const {REACT_APP_API, REACT_APP_API_PORT} = process.env
 const BASE_API = `${REACT_APP_API}:${REACT_APP_API_PORT}/api/`
 
 
-export default async () => {
+export default async (endpoint) => {
   try {
-    const response = await axios.get(`${BASE_API}basket`)
+    const response = await axios.get(`${BASE_API}basket${endpoint}`)
     return response.data
   } catch(e) {
     // TODO catch error with action later

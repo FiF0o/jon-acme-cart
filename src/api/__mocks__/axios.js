@@ -8,7 +8,7 @@ const apiData = [
   )
 ]
 
-export const expectedData = [...JSON.parse(apiData).basket]
+export const expectedData = [...JSON.parse(apiData).basketNormal]
 
 export default {
   get: jest.fn(() => Promise.resolve({data: expectedData}))
