@@ -15,7 +15,7 @@ const mapStateToProps = ({ basket, totalPrice, isLoading, isPromo, hasError }) =
 
 const mapDispatchToProps = (dispatch) =>
     bindActionCreators({
-      getData,
+      getData: (endpoint) => getData(endpoint),
       clearBasket: () => dispatch(clearBasket())
     }, dispatch);
 

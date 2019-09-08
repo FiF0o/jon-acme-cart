@@ -34,7 +34,7 @@ exports[`<BasketComponent /> component without items should render correctly 1`]
          
         <button
           className="mdc-button mdc-button--outlined"
-          onClick={[MockFunction]}
+          onClick={[Function]}
         >
           Load cart
         </button>

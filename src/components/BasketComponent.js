@@ -30,7 +30,7 @@ const BasketComponent = ({ basket, getData, isLoading, hasError, clearBasket }) 
               &nbsp;
               <button
                 className="mdc-button mdc-button--outlined"
-                onClick={getData}
+                onClick={() => getData('normal')}
               >
                 Load cart
               </button>

@@ -11,9 +11,9 @@ export const fetchedData = data => ({
   data
 })
 
-export const getData = () => (dispatch) => {
+export const getData = (endPoint) => (dispatch) => {
   dispatch(fetchingData())
-  return getAllItems('Normal')
+  return getAllItems(endPoint)
     .then(data =>
       dispatch(fetchedData(data))
     )
