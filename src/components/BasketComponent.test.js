@@ -47,8 +47,7 @@ describe('<BasketComponent /> component', () => {
     it('should call getData() when the button is clicked', () => {
       const mock = props.getData
       expect(mock).not.toHaveBeenCalled()
-      // getData() is the only button present on the page when the cart is empty
-      wrapper.find('button').simulate('click')
+      wrapper.find('[dataattribute="normal"]').simulate('click')
       expect(mock).toHaveBeenCalled()
     })
   })

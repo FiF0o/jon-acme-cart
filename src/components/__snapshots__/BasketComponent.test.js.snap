@@ -34,9 +34,26 @@ exports[`<BasketComponent /> component without items should render correctly 1`]
          
         <button
           className="mdc-button mdc-button--outlined"
+          dataattribute="normal"
           onClick={[Function]}
         >
-          Load cart
+          Case 1
+        </button>
+         
+        <button
+          className="mdc-button mdc-button--outlined"
+          dataattribute="normal2"
+          onClick={[Function]}
+        >
+          Case 2
+        </button>
+         
+        <button
+          className="mdc-button mdc-button--outlined"
+          dataattribute="promo"
+          onClick={[Function]}
+        >
+          Case 3
         </button>
       </div>
     </div>
