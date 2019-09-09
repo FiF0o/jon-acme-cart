@@ -70,6 +70,8 @@ describe('Test data', () => {
           hasError: false,
           isLoading: false
         })
+        // previous state of the cart, we calculate the price
+        expect(sumAmount(store.getState().basket)).toEqual(expectedBasket1Price)
         store.dispatch({ type: DISCOUNT, data: basket2 })
         expect(store.getState().basket).toEqual([...basket2])
         expect(sumAmount(store.getState().basket)).toEqual(expectedBasket2Price)
@@ -80,6 +82,7 @@ describe('Test data', () => {
 
     describe('CASE 3: DISCOUNT', () => {
       it(`should apply a strawberry discount when 'DISCOUNT' action is dispatched with a list of items contains 3 or more strwaberries and return the correct price`, () => {
+
         const data = [
           {
             productCode: "SR1",
@@ -133,7 +136,14 @@ describe('Test data', () => {
             productImg: "/some/link"
           }
         ]
-        expect(store.getState()).toEqual(state)
+
+        state = {...initialState, basket: [...data]}
+        const store = createStore(reducers, {...initialState, basket: [...data]})
+        const samePrice = sumAmount(store.getState().basket)
+        // No discount applied, price remains the same
+        expect(samePrice).toEqual(samePrice)
+
+        // Check DISCOUNT
         store.dispatch({ type: DISCOUNT, data })
         expect(store.getState()).toEqual({
           basket: [...expectedData],

@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "test:coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
-    "server": "node ./server/api/index.js"
+    "server": "node ./server/api/index.js",
+    "acme-oop": "node ./acme-oop.js"
   },
   "eslintConfig": {
     "extends": "react-app"
