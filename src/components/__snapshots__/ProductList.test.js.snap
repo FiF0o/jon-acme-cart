@@ -3,14 +3,14 @@
 exports[`ProductList component should render the list of products correctly 1`] = `
 <div>
   <Product
-    key="ABCD"
+    key="ABCD-0"
     name="ABC"
     price={4}
     productCode="ABCD"
     productImg="some/dummy/imgLink"
   />
   <Product
-    key="ABC"
+    key="ABC-1"
     name="ABC"
     price={4}
     productCode="ABC"

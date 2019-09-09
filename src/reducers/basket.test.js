@@ -1,7 +1,7 @@
 import basket from './basket'
 import { initialState } from '../initialState'
-import { FETCHED_DATA, CLEAR } from "../actions/actionTypes";
-
+import { FETCHED_DATA, CLEAR, DISCOUNT } from "../actions/actionTypes";
+import {CONSTANTS} from '../constants'
 
 describe('BasketReducer', () => {
   it('should return default state', () => {
@@ -22,6 +22,53 @@ describe('BasketReducer', () => {
     const expectedAction = {
       type: CLEAR,
     }
+    expect(basket([{}], expectedAction)).toEqual(expectedState)
+  })
+
+  it(`should handle ${DISCOUNT} case`, () => {
+    const expectedAction = {
+      type: DISCOUNT,
+      data: [{
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 5,
+        productImg:"some/img"
+      },
+      {
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 5,
+        productImg:"some/img"
+      },
+      {
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 5,
+        productImg:"some/img"
+      }]
+    }
+
+    const expectedState = [
+      {
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 4.5,
+        productImg:"some/img"
+      },
+      {
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 4.5,
+        productImg:"some/img"
+      },
+      {
+        productCode: CONSTANTS.Strawberries,
+        name: "name",
+        price: 4.5,
+        productImg:"some/img"
+      },
+    ]
+
     expect(basket([{}], expectedAction)).toEqual(expectedState)
   })
 })

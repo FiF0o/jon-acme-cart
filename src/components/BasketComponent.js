@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ProductList } from './ProductList'
 
 
-const BasketComponent = ({ basket, getData, isLoading, hasError, clearBasket, totalPrice }) =>
+const BasketComponent = ({ basket, getData, isLoading, hasError, clearBasket, totalPrice, checkDiscount }) =>
   <div className="mdc-layout-grid mdc-layout-grid">
     <div className="mdc-layout-grid__cell--span-12">
       <h1>{`Your basket contains ${basket.length} item(s)`}</h1>
@@ -22,13 +22,12 @@ const BasketComponent = ({ basket, getData, isLoading, hasError, clearBasket, to
         {
           basket.length > 1 ?
             <section>
-              <ProductList basket={basket} />
               <h3
                 className="mdc-typography--headline3"
-                style={{ textAlign: 'right' }}
               >
-                £ {totalPrice}
+                total price: <b>£ {totalPrice}</b>
               </h3>
+              <ProductList basket={basket} />
             </section>
             :
             <div className="expand-full">
@@ -67,8 +66,9 @@ const BasketComponent = ({ basket, getData, isLoading, hasError, clearBasket, to
         <div className="mdc-layout-grid__cell--span-6">
           <button
             className="mdc-button mdc-button--raised"
+            onClick={() => checkDiscount(basket)}
           >
-            Go to checkout
+            Check discount
           </button>
           &nbsp;
           <button

@@ -1,4 +1,4 @@
-import { FETCHING_DATA, FETCHED_DATA, ERROR, CLEAR } from './actionTypes'
+import { FETCHING_DATA, FETCHED_DATA, ERROR, CLEAR, DISCOUNT } from './actionTypes'
 import getAllItems from '../api/getAllItems';
 
 
@@ -22,4 +22,9 @@ export const getData = (endPoint) => (dispatch) => {
 
 export const clearBasket = () => ({
   type: CLEAR
+})
+
+export const checkDiscount = (data) => ({
+  type: DISCOUNT,
+  data
 })

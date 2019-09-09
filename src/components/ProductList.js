@@ -7,9 +7,9 @@ import { Product } from './Product'
 export const ProductList = ({ basket }) =>
   <div>
     {
-      basket.map(item =>
+      basket.map((item, i) =>
         <Product
-          key={item.productCode}
+          key={`${item.productCode}-${i}`}
           productCode={item.productCode}
           productImg={item.productImg}
           name={item.name}

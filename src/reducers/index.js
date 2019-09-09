@@ -8,11 +8,8 @@ import { FETCHING_DATA, ERROR } from "../actions/actionTypes";
 // with selector functions
 const reducers = combineReducers({
   basket,
-  totalPrice: (state = 0, action) => state,
   isLoading: (state=false, action) => action.type === FETCHING_DATA ? true : false,
-  hasError: (state=false, action) => action.type === ERROR ? true : false,
-  isPromo: (state=true, action) => state,
-
+  hasError: (state=false, action) => action.type === ERROR ? true : false
 });
 
 export default reducers
