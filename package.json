@@ -28,10 +28,15 @@
     "test:coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "server": "node ./server/api/index.js",
-    "acme-oop": "node ./acme-oop.js"
+    "acme-oop": "node ./acme-oop.js",
+    "e2e": "node_modules/.bin/cypress open",
+    "e2e:all": "node_modules/.bin/cypress run"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "cy": "readonly"
+    }
   },
   "jest": {
     "coveragePathIgnorePatterns": [
