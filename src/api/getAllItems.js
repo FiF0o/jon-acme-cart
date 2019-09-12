@@ -1,5 +1,6 @@
 import axios from 'axios'
-const {REACT_APP_API, REACT_APP_API_PORT} = process.env
+const REACT_APP_API_PORT = process.env.REACT_APP_API_PORT || 4000
+const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost'
 
 const BASE_API = `${REACT_APP_API}:${REACT_APP_API_PORT}/api/`
 

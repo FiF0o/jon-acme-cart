@@ -4,7 +4,8 @@ const server = jsonServer.create()
 const router = jsonServer.router(path.join(__dirname, 'db.json'))
 
 // required to enable CORS
-const {REACT_APP_WEB, REACT_APP_PORT} = process.env
+const REACT_APP_PORT = process.env.REACT_APP_PORT || 3000
+const REACT_APP_WEB = process.env.REACT_APP_WEB || 'http://localhost'
 
 const REACT_APP_API_PORT = process.env.REACT_APP_API_PORT || 4000
 
