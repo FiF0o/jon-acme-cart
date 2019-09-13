@@ -1,5 +1,8 @@
+import { sumAmount } from '../../src/rules/prices'
+import { initialState } from '../../src/initialState';
+
+
 const mockData = require('../../server/api/db.json');
-import {sumAmount} from '../../src/rules/prices'
 
 describe('Case page', () => {
   beforeEach(() => {
@@ -10,18 +13,20 @@ describe('Case page', () => {
 
     it.only('can load a basket with the correct items in the page, check the correct number of items, that the total price remains the same as there is no discount applied', () => {
       const mockResponseBody = [...mockData.basketNormal]
-
       // Mock endpoint and its reponse
       cy.server()
       cy.route('GET', '/api/basketnormal',
-      mockResponseBody
-      ).as('normalBasket')
+        mockResponseBody
+        ).as('normalBasket')
+
+      cy.window().its('store').invoke('getState')
+        .should('deep.equal', initialState)
 
       // check that the button exists making the API call exists
       cy.get('[dataattribute="normal"]')
         .should('be.visible')
-          .focus()
-          .click()
+        .focus()
+        .click()
 
       // check API & XHR responses to be passed in the view
       cy.get('@normalBasket')
@@ -34,17 +39,15 @@ describe('Case page', () => {
           expect(response.response.body).not.to.be.undefined
         })
 
-      // Test reducer has received the data
-
+      // Test reducer has received the data from XHR
+      cy.window().its('store').invoke('getState').its('basket')
+        .should('deep.equal', mockResponseBody)
 
       // Test that the UI is rendered with the correct data from the API
       cy.get('[dataattribute="product-list"]')
         .should('be.visible')
         .find('div.mdc-card.demo-basic-with-header')
-          .should($product => expect($product).to.have.length(mockData.basketNormal.length))
-
-      // TODO - Check price in reducer
-
+        .should($product => expect($product).to.have.length(mockData.basketNormal.length))
 
       const expectedPrice = sumAmount(mockResponseBody)
       const priceEl = 'h3 > b'
