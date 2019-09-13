@@ -34,9 +34,7 @@ describe('Case page', () => {
           expect(response.method).to.eq('GET')
           expect(response.status).to.eq(200)
           expect(response.url).to.contain("/api/basketnormal")
-          // TODO - that will do it for now - until we can have a proper matching xhr - resp.body
-          expect(response.response.body).not.to.be.null
-          expect(response.response.body).not.to.be.undefined
+          expect(response.response.body).to.deep.equal(mockResponseBody)
         })
 
       // Test reducer has received the data from XHR
