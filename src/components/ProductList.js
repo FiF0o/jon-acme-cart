@@ -5,7 +5,7 @@ import { Product } from './Product'
 
 // for simplicity of the exercise we say ee receive the basket directly
 export const ProductList = ({ basket }) =>
-  <div>
+  <div dataattribute="product-list">
     {
       basket.map((item, i) =>
         <Product
