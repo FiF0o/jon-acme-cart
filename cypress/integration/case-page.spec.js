@@ -6,12 +6,12 @@ const mockData = require('../../server/api/db.json');
 
 describe('Case page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visitHome()
   })
 
   describe('CASE 1: NO DISCOUNT APPLIED', () => {
 
-    it.only('can load a basket with the correct items in the page, check the correct number of items, that the total price remains the same as there is no discount applied', () => {
+    it('can load a basket with the correct items in the page, check the correct number of items, that the total price remains the same as there is no discount applied', () => {
       const mockResponseBody = [...mockData.basketNormal]
       // Mock endpoint and its reponse
       cy.server()

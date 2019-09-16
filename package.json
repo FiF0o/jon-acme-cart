@@ -35,7 +35,8 @@
   "eslintConfig": {
     "extends": "react-app",
     "globals": {
-      "cy": "readonly"
+      "cy": "readonly",
+      "Cypress": "readonly"
     }
   },
   "jest": {
