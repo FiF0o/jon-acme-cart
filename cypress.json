@@ -1,1 +1,7 @@
-{}
+{
+  "env": {
+    "baseUrl": "http://localhost",
+    "appPort": "3000",
+    "apiPort": "4000"
+  }
+}
