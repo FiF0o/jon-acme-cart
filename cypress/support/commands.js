@@ -28,3 +28,10 @@ const appUrl = `${Cypress.env('baseUrl')}:${Cypress.env('appPort')}`
 Cypress.Commands.add('visitHome', () => {
   cy.visit(appUrl)
 })
+
+// default path to normalbasket.json
+Cypress.Commands.add('normalbasket', (items = 'fixture:normalbasket') => {
+  cy.server()
+  cy.route('GET', '/api/basketnormal', items)
+    .as('normalBasket')
+})
